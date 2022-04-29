@@ -10,45 +10,53 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppScaffold();
+    return _AppScaffold();
   }
-}
 
-Widget AppScaffold() {
-  return MaterialApp(
-    theme: ThemeData(fontFamily: 'vazir'),
-    debugShowCheckedModeBanner: false,
-    home: Scaffold(
-      appBar: CustomAppBar(),
-      backgroundColor: Colors.amber,
-      body: AppBody(),
-    ),
-  );
-}
-
-Widget AppBody() {
-  return SafeArea(
-    child: Center(
-      child: Container(
-        padding: EdgeInsets.all(5.0),
-        color: Colors.white,
-        child: Text('حمید کامیاب'),
+  Widget _AppScaffold() {
+    return MaterialApp(
+      theme: ThemeData(fontFamily: 'vazir'),
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: _ApplicationAppBar(),
+        backgroundColor: Colors.lightBlue,
+        body: _ApplicationBody(),
       ),
-    ),
-  );
-}
+    );
+  }
 
-PreferredSizeWidget CustomAppBar() {
-  return (AppBar(
-    title: Center(
-      child: Text(
-        'Hamid Kamyab',
-        style:
-            const TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+  PreferredSizeWidget _ApplicationAppBar() {
+    return AppBar(
+      title: Center(
+        child: Text(
+          'Hamid Kamyab',
+          style:
+              const TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+        ),
       ),
-    ),
-    backgroundColor: Colors.yellow,
-    // below property Change the shadow of the appBar
-    elevation: 0,
-  ));
+      backgroundColor: Colors.yellow,
+      // below property Change the shadow of the appBar
+      elevation: 0,
+    );
+  }
+
+  Widget _ApplicationBody() {
+    return SafeArea(
+      child: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            children: [
+              CircleAvatar(
+                backgroundImage: AssetImage('images/avatar.jpeg'),
+                radius: 80,
+              ),
+              Text("My Name is Hamid, I'm a Developer"),
+              Text(
+                  "Love Code, Develop Web By Reactjs and Mobile Apps by Flutter"),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 }
