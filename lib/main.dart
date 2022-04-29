@@ -50,9 +50,16 @@ class MyApp extends StatelessWidget {
                 backgroundImage: AssetImage('images/avatar.jpeg'),
                 radius: 80,
               ),
-              Text("My Name is Hamid, I'm a Developer"),
               Text(
-                  "Love Code, Develop Web By Reactjs and Mobile Apps by Flutter"),
+                "My Name is Hamid, I'm a Developer",
+                style:
+                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+              ),
+              Text(
+                "Love Code, Develop Web By Reactjs and Mobile Apps by Flutter",
+                style:
+                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+              ),
             ],
           ),
         ),
